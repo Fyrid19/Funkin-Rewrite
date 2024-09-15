@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://lime.software/project/1.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://lime.software/project/1.0.2 http://lime.software/xsd/project-1.0.2.xsd">
+
+	<!-- _________________________ Application Settings _________________________ -->
+	<app 
+		title="Friday Night Funkin': Prototype Engine" 
+		file="FunkinProto" main="Main" version="1.0.0" 
+		company="com.protodev.prtengine" 
+	/>
+
+	<!-- ____________________________ Window Settings ___________________________ -->
+
+	<!--These window settings apply to all targets-->
+	<window width="1280" height="720" fps="" background="#000000" hardware="true" vsync="false" />
+
+	<!--Desktop-specific-->
+	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true"/>
+	<window antialiasing="0" allow-high-dpi="true"/>
+
+	<!-- _____________________________ Path Settings ____________________________ -->
+
+	<set name="BUILD_DIR" value="export/debug" if="debug" />
+	<set name="BUILD_DIR" value="export/release" unless="debug" />
+	<set name="BUILD_DIR" value="export/32bit" if="32bits" />
+
+	<source path="src" />
+	<assets path="assets" />
+
+	<assets path="buildmeta.json" embed="true" />
+
+	<!-- _______________________________ Libraries ______________________________ -->
+
+	<haxelib name="flixel" />
+	<haxelib name="flixel-addons" />
+
+	<!-- _______________________________ Haxedefs _______________________________ -->
+
+	<!-- SHOULD run the build macro -->
+	<haxeflag name="--macro" value="proto.macro.BuildMacro.main()" />
+
+	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
+	<haxedef name="FLX_NO_MOUSE" if="mobile" />
+	<haxedef name="FLX_NO_KEYBOARD" if="mobile" />
+	<haxedef name="FLX_NO_TOUCH" if="desktop" />
+
+	<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
+	<haxedef name="FLX_NO_DEBUG" unless="debug" />
+
+	<!-- _________________________________ Custom _______________________________ -->
+
+	<haxedef name="no-deprecation-warnings" />
+	
+	<!--Allow working memory greater than 1 gig-->
+	<haxedef name="HXCPP_GC_BIG_BLOCKS" if="desktop"/>
+	<!--RELEASE EXCEPTION Handling!!-->
+	<haxedef name="HXCPP_CHECK_POINTER" />
+    <haxedef name="HXCPP_STACK_LINE" />
+    <haxedef name="HXCPP_STACK_TRACE" />
+
+	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
+</project>

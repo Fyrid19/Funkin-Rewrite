@@ -1,0 +1,8 @@
+# To prevent messing with other compilations
+export/*
+
+# Repo stuff
+.git/*
+
+# Proto related things
+buildmeta.json

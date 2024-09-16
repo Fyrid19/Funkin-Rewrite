@@ -26,11 +26,8 @@ class Main extends Sprite {
 	}
 
 	function setFlxDefines() {
-		FlxG.mouse.visible = false;
 		FlxG.cameras.useBufferLocking = true;
-		FlxG.autoPause = false;
 		FlxG.fixedTimestep = false;
-		FlxG.mouse.useSystemCursor = true;
 	}
 
 	@:functionCode('

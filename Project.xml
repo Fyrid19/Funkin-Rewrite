@@ -34,10 +34,13 @@
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />
 
+	<haxelib name="hxsdl" />
+
 	<!-- _______________________________ Haxedefs _______________________________ -->
 
-	<!-- SHOULD run the build macro -->
-	<haxeflag name="--macro" value="proto.macro.BuildMacro.main()" />
+	<!-- Runs the build macros (im using pre/postbuild but shhhhh) -->
+	<prebuild haxe="src/proto/macro/PreBuildMacro.hx" />
+	<postbuild haxe="src/proto/macro/PostBuildMacro.hx" />
 
 	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
 	<haxedef name="FLX_NO_MOUSE" if="mobile" />

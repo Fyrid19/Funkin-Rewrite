@@ -28,7 +28,7 @@ class CommitMacro {
             haxe.macro.Context.error("Cannot execute `git rev-list HEAD --count`. " + message, pos);
         }
 
-        commit = Std.int(proc.stdout.readFloat());
+        commit = Std.parseInt(proc.stdout.readLine());
         return macro $v{commit};
     }
 

@@ -2,10 +2,10 @@ package src.proto.macro; // throws it round in a circle
 
 import haxe.Json;
 
-// #if sys
+#if sys
 import sys.io.File;
 import sys.FileSystem;
-// #end
+#end
 
 typedef BuildMetaData = {
     ?buildNum:Int,

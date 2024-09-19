@@ -27,7 +27,7 @@
 	<source path="src" />
 	<assets path="assets" />
 
-	<assets path="buildmeta.json" embed="true" />
+	<!-- <assets path="buildmeta.json" embed="true" /> -->
 
 	<!-- _______________________________ Libraries ______________________________ -->
 

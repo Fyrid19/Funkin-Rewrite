@@ -1,2 +1,0 @@
-where you'd put json or yaml files
-basically files that hold data for your project

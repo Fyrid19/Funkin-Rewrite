@@ -1,4 +1,4 @@
-package funkin.main;
+package funkin.backend;
 
 class InitialState extends MusicBeatState {
     

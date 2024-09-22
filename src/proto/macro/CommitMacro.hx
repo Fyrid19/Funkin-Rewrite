@@ -1,4 +1,4 @@
-package src.proto.macro;
+package src.proto.macro; // throws it round in a circle
 
 #if macro
 import haxe.macro.Context;

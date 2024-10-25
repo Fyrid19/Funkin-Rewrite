@@ -1,0 +1,64 @@
+# Default note skin, not recommended to use as a template over the actual template but eh
+
+skinName = "Default"
+
+# All the data necessary to make up a note skin
+[note]
+# If there's no defined folder it'll search the folder where the toml is located
+# assetPath = "NOTE_assets"
+
+# above applies for these as well, though these arent mandatory
+strumNotePath = "noteStrumline"
+noteSplashPath = "noteSplashes"
+playNotePath = "notes"
+
+# Animation names in the XML file(s)
+[note.anim]
+notes = [
+    "noteLeft", 
+    "noteDown", 
+    "noteUp", 
+    "noteRight"
+]
+
+splashes = [
+    "note impact 1 purple", 
+    "note impact 1 blue", 
+    "note impact 1 green", 
+    "note impact 1 red"
+]
+
+splashesAlt = [
+    "note impact 2 purple", 
+    "note impact 2 blue", 
+    "note impact 2 green", 
+    "note impact 2 red"
+]
+
+static = [
+    "staticLeft",
+    "staticDown",
+    "staticUp",
+    "staticRight"
+]
+
+pressed = [
+    "pressLeft",
+    "pressDown",
+    "pressUp",
+    "pressRight"
+]
+
+confirm = [
+    "confirmLeft",
+    "confirmDown",
+    "confirmUp",
+    "confirmRight"
+]
+
+# Data relating to sustains
+[note.sustain]
+assetPath = "noteSustains"
+
+# More on this later
+[note.sustain.anim]

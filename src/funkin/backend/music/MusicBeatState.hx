@@ -1,6 +1,7 @@
 package funkin.backend.music;
 
 import flixel.addons.transition.FlxTransitionableState;
+import funkin.backend.interfaces.IMusicBeat;
 
 /**
  * FlxTransitionableState with Music Beat properties.
@@ -17,9 +18,9 @@ class MusicBeatState extends FlxTransitionableState implements IMusicBeat {
     override function create() {
         super.create();
         
-        Conductor.whenStepHit.add(stepHit);
-        Conductor.whenBeatHit.add(beatHit);
-        Conductor.whenMeasureHit.add(measureHit);
+        Conductor.onStepHit.add(stepHit);
+        Conductor.onBeatHit.add(beatHit);
+        Conductor.onMeasureHit.add(measureHit);
     }
 
     override function update(elapsed:Float) {

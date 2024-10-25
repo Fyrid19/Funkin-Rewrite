@@ -1,4 +1,4 @@
-package funkin.backend;
+package;
 
 import flixel.FlxG;
 import flixel.FlxGame;
@@ -19,7 +19,7 @@ class Main extends Sprite {
 	public function new() {
 		super();
 
-		addChild(new FlxGame(1280, 720, GameState, 120, true));
+		addChild(new FlxGame(1280, 720, funkin.game.MainState, 120, true));
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 		registerAsDPICompatible();
 		setFlxDefines(); 

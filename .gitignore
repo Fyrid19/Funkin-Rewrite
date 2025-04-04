@@ -1,9 +1,9 @@
 # To prevent messing with other compilations
-export/*
+export/
+.haxelib/
 
 # Repo stuff
 .git/*
 
-# Proto related things
-buildmeta.json
+# Funkin related things
 .build_time

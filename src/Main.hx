@@ -19,7 +19,7 @@ class Main extends Sprite {
 	public function new() {
 		super();
 
-		addChild(new FlxGame(1280, 720, funkin.game.MainState, 120, true));
+		addChild(new FlxGame(1280, 720, funkin.game.InitState, 120, true));
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 		registerAsDPICompatible();
 		setFlxDefines(); 

@@ -1,4 +1,4 @@
-package src.proto.macro; // throws it round in a circle
+package src.funkin.backend.macro; // throws it round in a circle
 
 import haxe.Json;
 

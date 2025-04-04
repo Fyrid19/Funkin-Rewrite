@@ -1,6 +1,10 @@
 package funkin.game;
 
+import funkin.game.song.SongGroup;
+
 class MainState extends MusicBeatState {
+    public var song:SongGroup;
+
     override public function create() {
         super.create();
 
@@ -17,5 +21,10 @@ class MainState extends MusicBeatState {
 
     override public function beatHit() {
         trace('beat hit');
+    }
+
+    public function playSong(songName:String) {
+        FlxG.sound.playMusic(Paths.inst(songName), 0.7);
+        song = new SongGroup(songName);
     }
 }

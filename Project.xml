@@ -4,10 +4,16 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 	<app 
-		title="Friday Night Funkin': Prototype Engine" 
-		file="FunkinProto" main="Main" version="1.0.0" 
-		company="com.protodev.prtengine" 
+		title="Friday Night Funkin'" 
+		file="Funkin" main="Main" version="1.0.0" 
+		company="com.fyridev.funkin" 
 	/>
+	
+	<!-- ________________________________ Defines _______________________________ -->
+
+	<define name="DISCORD_RPC" if="desktop"/>
+	<define name="MOD_SUPPORT" unless="web"/>
+	<define name="VIDEO_PLAYBACK" if="desktop || mobile"/>
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
@@ -27,21 +33,20 @@
 	<source path="src" />
 	<assets path="assets" />
 
-	<assets path="buildmeta.json" embed="true" />
-
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />
 
-	<haxelib name="hxsdl" />
 	<haxelib name="haxetoml" />
+
+	<haxelib name="hxdiscord_rpc" if="DISCORD_RPC"/>
 
 	<!-- _______________________________ Haxedefs _______________________________ -->
 
-	<!-- Runs the build macros (im using pre/postbuild but shhhhh) -->
-	<prebuild haxe="src/proto/macro/PreBuildMacro.hx" />
-	<postbuild haxe="src/proto/macro/PostBuildMacro.hx" />
+	<!-- Runs the build macros -->
+	<prebuild haxe="src/funkin/backend/macro/PreBuildMacro.hx" />
+	<postbuild haxe="src/funkin/backend/macro/PostBuildMacro.hx" />
 
 	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
 	<haxedef name="FLX_NO_MOUSE" if="mobile" />
